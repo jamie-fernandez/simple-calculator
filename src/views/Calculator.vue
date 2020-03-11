@@ -17,6 +17,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="css">
+    div.container {
+        width: 25%
+    }
 </style>
