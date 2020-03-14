@@ -22,13 +22,13 @@
             <b-button class="button" variant="info" value="2">2</b-button>
             <b-button class="button" variant="info" value="3">3</b-button>
             <b-button class="button" variant="warning" value="+">+</b-button>
-            <b-button class="button" variant="success" value="=">=</b-button>
+            <b-button class="button" variant="warning" value="-">-</b-button>
         </b-row>
 
         <b-row class="last-row">
             <b-button class="button zero" variant="info" value="0">0</b-button>
             <b-button class="button" variant="warning" value=".">.</b-button>
-            <b-button class="button" variant="warning" value="-">-</b-button>
+            <b-button class="button" variant="success" value="=">=</b-button>
         </b-row>
     </div>
 </template>
@@ -56,7 +56,7 @@ export default {
 }
 
 .zero {
-  width: 128px;
+  width: 194px;
 }
 
 .result {  
