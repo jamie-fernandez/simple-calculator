@@ -1,5 +1,5 @@
-# ti-108-calculator
-Creates a TI-108 calculator using vue
+# vue-simple-calculator
+Creates a simple calculator built with vue
 
 ## Project setup
 ```
