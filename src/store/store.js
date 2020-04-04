@@ -1,12 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { includes } from 'lodash';
 
 Vue.use(Vuex);
-
-// tutorials & examples
-//  * https://flaviocopes.com/vuex/#create-the-vuex-store
-//  * https://itnext.io/managing-state-in-vue-js-with-vuex-f036fd71f432
-//  * https://mdbootstrap.com/snippets/jquery/ascensus/456902
 
 export const store = new Vuex.Store({
     state: {
@@ -40,9 +36,10 @@ export const store = new Vuex.Store({
                 context.commit('SET_VALUE_DISPLAY', displayValue === '0' ? digit : displayValue + digit);
             }
         },
-        inputDecimal(context, dot) {
-            if (!context.state.calculator.displayValue.includes(dot)) {
-              context.commit('SET_VALUE_DISPLAY', context.state.calculator.displayValue += dot);
+        inputDecimal(context) {
+            const { displayValue } = context.state.calculator;
+            if (!includes(displayValue, ".")) {
+              context.commit('SET_VALUE_DISPLAY', context.state.calculator.displayValue += ".");
             }
         },
         handleOperator(context, nextOperator) {
@@ -58,7 +55,7 @@ export const store = new Vuex.Store({
                 context.commit('SET_FIRST_OPERAND', inputValue)
             } else if (operator) {
               const currentValue = firstOperand || 0;
-              const result = context.state.calculator.performCalculation[operator](currentValue, inputValue);
+              const result = context.state.performCalculation[operator](currentValue, inputValue);
 
               context.commit('SET_VALUE_DISPLAY', String(result));
               context.commit('SET_FIRST_OPERAND', result);
