@@ -1,15 +1,21 @@
 <template>
     <div class="screen">
-        <div id="display">
-            <div id="result"><p>0</p></div>
+        <div class="display">
+            <div id="result">
+              <p>{{  }}</p>
+            </div>
             <div id="previous"><p>0</p></div>
         </div>
     </div>
 </template>
 
 <script>
-export default {
+import {mapGetters} from 'vuex';
 
+export default {
+computed: {
+      ...mapGetters(['display']),
+}
 }
 </script>
 
@@ -20,7 +26,7 @@ export default {
   font-family: 'Share Tech Mono', monospace;
 }
 
-#display {
+.display {
     background: #bcbcbc;
     padding: 8px;
     margin:16px 12px 10px 16px;
