@@ -16,14 +16,13 @@ export default {
 
 .calculator-screen {
   width: 100%;
-  height: 80px;
   border: none;
-  background-color: #252525;
+  background-color: black;
   color: #fff;
   text-align: right;
   padding-right: 20px;
   padding-left: 10px;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 </style>
