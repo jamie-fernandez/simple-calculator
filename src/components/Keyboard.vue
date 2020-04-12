@@ -50,6 +50,7 @@ button {
   grid-template-columns: repeat(4, 21%);
   grid-gap: 10px;
   padding: 10px;
+  justify-content: center;
 }
 
 .equal-sign {
