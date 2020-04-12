@@ -1,10 +1,8 @@
 <template>
-  <div class="container">
-    <div id="calc" class="text-center">
+    <div class="calculator">
       <Screen/>
       <Keyboard/>
     </div>
-  </div>
 </template>
 
 <script>
@@ -23,23 +21,13 @@ export default {
 </script>
 
 <style lang="css">
-@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
-
-
-body {
-    background:antiquewhite;
-}
-
-#calc {  
-  text-align: center;
-  width: 380px; 
-  display: block;
-  border-radius:8px;
-  border: 1px solid;
-  padding:8px;
-  margin-top:20px;
-  margin-left:auto;
-  margin-right:auto;
-  background: #224662;
+.calculator {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
 }
 </style>

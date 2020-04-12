@@ -1,11 +1,5 @@
 <template>
-    <div class="screen">
-        <div class="display">
-            <div id="result">
-              <p>{{ display }}</p>
-            </div>
-        </div>
-    </div>
+    <input type="text" class="calculator-screen z-depth-1" disabled :value="display"/>
 </template>
 
 <script>
@@ -19,17 +13,17 @@ export default {
 </script>
 
 <style lang="css">
-.display {
-    background: #bcbcbc;
-    padding: 8px;
-    margin:16px 12px 10px 16px;
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-    border-radius:8px;
+
+.calculator-screen {
+  width: 100%;
+  height: 80px;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+  font-size: 4rem;
 }
 
-#result p {
-  font-size:1.8em;
-  text-align: right;
-}
 </style>

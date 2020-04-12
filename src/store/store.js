@@ -30,10 +30,10 @@ export const store = new Vuex.Store({
             const { displayValue, waitingForSecondOperand } = context.state.calculator;
 
             if (waitingForSecondOperand === true) {
-                context.commit('SET_VALUE_DISPLAY', digit);
+                context.commit('SET_VALUE_DISPLAY', String(digit));
                 context.commit('SET_WAITING', false);
             } else {
-                context.commit('SET_VALUE_DISPLAY', displayValue === '0' ? digit : displayValue + digit);
+                context.commit('SET_VALUE_DISPLAY', displayValue === '0' ? String(digit) : displayValue + String(digit));
             }
         },
         inputDecimal(context) {

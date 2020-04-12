@@ -1,35 +1,34 @@
 <template>
-      <!-- Calculator Keys-->
-      <div class="keyboard">
-        <b-row>
-            <b-button class="button number" variant="info" @click="inputDigit(7)">7</b-button>
-            <b-button class="button number" variant="info" @click="inputDigit(8)">8</b-button>
-            <b-button class="button number" variant="info" @click="inputDigit(9)">9</b-button>
-            <b-button class="button all-clear" variant="danger" @click="resetCalculator()">AC</b-button>
-            <b-button class="button clear-entry" variant="danger" value="ce">CE</b-button>
-        </b-row>
+      <div class="calculator-keys">
+        <!-- <b-row> -->
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(7)">7</button>
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(8)">8</button>
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(9)">9</button>
+            <button type="button" class="nes-btn is-error"  @click="resetCalculator()">AC</button>
+            <!-- <button type="button" class="nes-btn is-error" value="ce">CE</button> -->
+        <!-- </b-row> -->
 
-        <b-row>
-            <b-button class="button number" variant="info" @click="inputDigit(4)">4</b-button>
-            <b-button class="button number" variant="info" @click="inputDigit(5)">5</b-button>
-            <b-button class="button number" variant="info" @click="inputDigit(6)">6</b-button>
-            <b-button class="button operator" variant="warning" @click="handleOperator('/')">÷</b-button>
-            <b-button class="button operator" variant="warning" @click="handleOperator('*')">x</b-button>
-        </b-row>
+        <!-- <b-row> -->
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(4)">4</button>
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(5)">5</button>
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(6)">6</button>
+            <button type="button" class="nes-btn is-warning" @click="handleOperator('/')">÷</button>
+        <!-- </b-row> -->
 
-        <b-row>
-            <b-button class="button number" variant="info" @click="inputDigit(1)">1</b-button>
-            <b-button class="button number" variant="info" @click="inputDigit(2)">2</b-button>
-            <b-button class="button number" variant="info" @click="inputDigit(3)">3</b-button>
-            <b-button class="button operator" variant="warning" @click="handleOperator('+')">+</b-button>
-            <b-button class="button operator" variant="warning" @click="handleOperator('-')">-</b-button>
-        </b-row>
+        <!-- <b-row> -->
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(1)">1</button>
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(2)">2</button>
+            <button type="button" class="nes-btn is-primary" @click="inputDigit(3)">3</button>
+            <button type="button" class="nes-btn is-warning" @click="handleOperator('+')">+</button>
+            <button type="button" class="nes-btn is-primary zero" @click="inputDigit(0)">0</button>
+        <!-- </b-row> -->
 
-        <b-row class="last-row">
-            <b-button class="button zero number" variant="info" @click="inputDigit(0)">0</b-button>
-            <b-button class="button decimal" variant="warning"  @click="inputDecimal()">.</b-button>
-            <b-button class="button operator" variant="success" @click="handleOperator('=')">=</b-button>
-        </b-row>
+        <!-- <b-row class="last-row"> -->
+            <button type="button" class="nes-btn is-warning" @click="handleOperator('-')">-</button>
+            <button type="button" class="nes-btn is-warning" @click="inputDecimal()">.</button>
+            <button type="button" class="nes-btn is-success equal-sign" @click="handleOperator('=')">=</button>
+            <button type="button" class="nes-btn is-warning" @click="handleOperator('*')">x</button>
+        <!-- </b-row> -->
     </div>
 </template>
 
@@ -49,28 +48,20 @@ export default {
 </script>
 
 <style lang="css">
-.keyboard {
-  display: inline-block;
-  text-align: center;
-  margin-bottom:8px;
+button {
+  height: 60px;
+  font-size: 2rem!important;
 }
 
-.row {
-  margin-top: 4px;
+.equal-sign {
+  height: 220%;
+  /* grid-area: 2 / 4 / 6 / 5; */
 }
 
-.button {
-  width: 62px;
-  margin: 2px;
-}
-
-.zero {
-  width: 194px;
-}
-
-.result {  
-  float:right;
-  margin-left:4px;
-  height: 74px;
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
 </style>
