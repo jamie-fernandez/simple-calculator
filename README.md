@@ -1,25 +1,2 @@
-# vue-simple-calculator
-Creates a simple calculator built with vue
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Simple 8 Bit Calculator
+A simple calculator build with [vue-cli](https://cli.vuejs.org/), [vuex](https://vuex.vuejs.org/), and [ness.css](https://nostalgic-css.github.io/NES.css/)
