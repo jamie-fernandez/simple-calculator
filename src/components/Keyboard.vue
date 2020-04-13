@@ -1,67 +1,84 @@
 <template>
-      <!-- TI-108 Elementary Calculator Keys-->
-      <div class="keyboard">
-        <b-row>
-            <b-button class="button" variant="info" value="7">7</b-button>
-            <b-button class="button" variant="info" value="8">8</b-button>
-            <b-button class="button" variant="info" value="9">9</b-button>
-            <b-button class="button" variant="danger" value="ac">AC</b-button>
-            <b-button class="button" variant="danger" value="ce">CE</b-button>
-        </b-row>
+      <div class="calculator-keys">
+          <button type="button" class="row-one nes-btn is-error"  @click="resetCalculator()">AC</button>
+          <button type="button" class="row-one nes-btn is-warning" @click="handleOperator('/')">÷</button>
+          <button type="button" class="row-one nes-btn is-warning" @click="handleOperator('*')">x</button>
+          <button type="button" class="row-one nes-btn is-warning" @click="handleOperator('-')">-</button>
 
-        <b-row>
-            <b-button class="button" variant="info" value="4">4</b-button>
-            <b-button class="button" variant="info" value="5">5</b-button>
-            <b-button class="button" variant="info" value="6">6</b-button>
-            <b-button class="button" variant="warning" value="/">/</b-button>
-            <b-button class="button" variant="warning" value="*">*</b-button>
-        </b-row>
+          <button type="button" class="row-two nes-btn is-primary" @click="inputDigit(7)">7</button>
+          <button type="button" class="row-two nes-btn is-primary" @click="inputDigit(8)">8</button>
+          <button type="button" class="row-two nes-btn is-primary" @click="inputDigit(9)">9</button>
+          <button type="button" class="row-two nes-btn is-warning" @click="handleOperator('+')">+</button>
 
-        <b-row>
-            <b-button class="button" variant="info" value="1">1</b-button>
-            <b-button class="button" variant="info" value="2">2</b-button>
-            <b-button class="button" variant="info" value="3">3</b-button>
-            <b-button class="button" variant="warning" value="+">+</b-button>
-            <b-button class="button" variant="warning" value="-">-</b-button>
-        </b-row>
+          <button type="button" class="row-three nes-btn is-primary" @click="inputDigit(4)">4</button>
+          <button type="button" class="row-three nes-btn is-primary" @click="inputDigit(5)">5</button>
+          <button type="button" class="row-three nes-btn is-primary" @click="inputDigit(6)">6</button>
 
-        <b-row class="last-row">
-            <b-button class="button zero" variant="info" value="0">0</b-button>
-            <b-button class="button" variant="warning" value=".">.</b-button>
-            <b-button class="button" variant="success" value="=">=</b-button>
-        </b-row>
+          <button type="button" class="row-four nes-btn is-primary" @click="inputDigit(1)">1</button>
+          <button type="button" class="row-four nes-btn is-primary" @click="inputDigit(2)">2</button>
+          <button type="button" class="row-four nes-btn is-primary" @click="inputDigit(3)">3</button>
+          <button type="button" class="equal-sign nes-btn is-success" @click="handleOperator('=')">=</button>
+
+          <button type="button" class="zero nes-btn is-primary" @click="inputDigit(0)">0</button>
+          <button type="button" class="row-five nes-btn is-warning" @click="inputDecimal()">.</button>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-
+  name: 'keyboard',
+  methods: {
+    ...mapActions([
+        'inputDigit',
+        'handleOperator',
+        'resetCalculator',
+        'inputDecimal'
+      ])
+  }
 }
 </script>
 
 <style lang="css">
-.keyboard {
-  display: inline-block;
-  text-align: center;
-  margin-bottom:8px;
+button {
+  height: 60px;
+  font-size: 1.25!important;
 }
 
-.row {
-  margin-top: 4px;
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 21%);
+  grid-gap: 10px;
+  padding: 10px;
+  justify-content: center;
 }
 
-.button {
-  width: 62px;
-  margin: 2px;
-}
+.equal-sign {
+  height: 317%;
+ }
 
 .zero {
-  width: 194px;
+  grid-column: 1 / span 2;
+  grid-row: 5;
 }
 
-.result {  
-  float:right;
-  margin-left:4px;
-  height: 74px;
+.row-one {
+  grid-row: 1;
+}
+
+.row-two {
+  grid-row: 2;
+}
+
+.row-three {
+  grid-row: 3;
+}
+
+.row-four {
+  grid-row: 4;
+}
+
+.row-five {
+  grid-row: 5;
 }
 </style>
