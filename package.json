@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "vue": "^2.6.11",
     "vuenes.css": "^2.1.0",
     "vuex": "^3.1.3"
